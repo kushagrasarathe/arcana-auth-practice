@@ -6,7 +6,11 @@ import { ProvideAuth } from "@arcana/auth-react";
 const clientId = process.env.NEXT_PUBLIC_CLIENT_ID;
 
 // clientId: Arcana Unique App Identifier via Dashboard
-const provider = new AuthProvider(`${clientId}`);
+const provider = new AuthProvider(`${clientId}`, {
+  alwaysVisible: true,
+  network: "testnet",
+  theme: "light"
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

@@ -7,6 +7,14 @@ const onLogin = () => {
 
 export default function Home() {
   const auth = useAuth();
+
+  const func = async () => {
+    const info = await auth.user?.email;
+    console.log(info);
+  };
+
+  func();
+
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 `}
